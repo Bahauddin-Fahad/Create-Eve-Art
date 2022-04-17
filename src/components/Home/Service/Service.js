@@ -4,9 +4,6 @@ const Service = ({ service }) => {
   const { serviceName, serviceImg, description, price } = service;
   const navigate = useNavigate();
 
-  //   const navigateToServiceDetail = (id) => {
-  //     navigate(`/checkout/${id}`);
-  //   };
   return (
     <div className="border-2 rounded-md p-3 w-11/12 mx-auto shadow-md flex flex-col items-center justify-around">
       <img

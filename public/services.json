@@ -1,42 +1,42 @@
 [
   {
     "id": 1,
-    "serviceImg": "./serviceImages/portrait.jpg",
+    "serviceImg": "../serviceImages/portrait.jpg",
     "serviceName": "Portrait Photography",
     "price": "$99",
     "description": "A portrait is not made in the camera but on either side of it.It's one thing to make a picture of what a person looks like, it's another thing to make a portrait of who they are."
   },
   {
     "id": 2,
-    "serviceImg": "./serviceImages/nature.jpg",
+    "serviceImg": "../serviceImages/nature.jpg",
     "serviceName": "Nature Photoshoot",
     "price": "$109",
     "description": "Nature is the most amazing thing the creator has given us. And Explore yourself in the beauty of the nature"
   },
   {
     "id": 3,
-    "serviceImg": "./serviceImages/wedding.jpg",
+    "serviceImg": "../serviceImages/wedding.jpg",
     "serviceName": "Wedding Photoshoot",
     "price": "$220",
     "description": "Event photography of the biggest day of a couple's life is a big responsibility. But with the right equipment, practice, and preparation, you can get great wedding photos."
   },
   {
     "id": 4,
-    "serviceImg": "./serviceImages/food.jpg",
+    "serviceImg": "../serviceImages/food.jpg",
     "serviceName": "Food Photography",
     "price": "$99",
     "description": "Taking great photographs of food is a hard-earned skill after all.A great photograph is never a fluke you may not know why it's special or how you made it that way, but the fact remains that certain fundamentals still came together to make it happen."
   },
   {
     "id": 5,
-    "serviceImg": "./serviceImages/product.jpg",
+    "serviceImg": "../serviceImages/product.jpg",
     "serviceName": "Product Photography",
     "price": "$99",
     "description": "Product photography is any image of a good for sale. Also known as commercial photography, these images are meant to entice shoppers to purchase the photographed products.Get your favourite products spotted on and explore the world"
   },
   {
     "id": 6,
-    "serviceImg": "./serviceImages/fashion.jpg",
+    "serviceImg": "../serviceImages/fashion.jpg",
     "serviceName": "Fashion Photography",
     "price": "$185",
     "description": "Fashion is about who you want to be, not who you are, it's therefore artificial… it's funny and it's sad and it's a little crazy. But I would want those elements to be in any photograph I took."
