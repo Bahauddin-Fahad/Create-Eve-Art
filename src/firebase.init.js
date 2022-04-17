@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyA_KtEMCOvl-wnH9dzhvrE-kZYDI6cB-Zc",
-  authDomain: "create-eve-art.firebaseapp.com",
-  projectId: "create-eve-art",
-  storageBucket: "create-eve-art.appspot.com",
-  messagingSenderId: "191293126957",
-  appId: "1:191293126957:web:8404e1def401061f3f7ba4",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
