@@ -10,7 +10,6 @@ const Header = () => {
   const [user] = useAuthState(auth);
 
   const handleSignOut = () => {
-    // console.log("logged out");
     signOut(auth);
   };
   return (
@@ -23,6 +22,9 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="flex-grow-0" id="responsive-navbar-nav">
             <Nav className="mx-auto">
+              <CustomLink as={Link} to="/home">
+                Home
+              </CustomLink>
               <CustomLink as={Link} to="/checkout">
                 Checkout
               </CustomLink>
