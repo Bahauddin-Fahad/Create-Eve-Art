@@ -35,9 +35,9 @@ const Header = () => {
                 About Me
               </CustomLink>
               {user ? (
-                <button className=" text-gray-400" onClick={handleSignOut}>
+                <CustomLink className="" onClick={handleSignOut} to="login">
                   Sign Out
-                </button>
+                </CustomLink>
               ) : (
                 <CustomLink as={Link} to="login">
                   Log In

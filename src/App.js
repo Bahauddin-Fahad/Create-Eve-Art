@@ -7,9 +7,10 @@ import Blogs from "./components/Blogs/Blogs";
 import About from "./components/About/About";
 import Login from "./components/CustomerForms/Login/Login";
 import Register from "./components/CustomerForms/Register/Register";
+import NotFound from "./components/Shared/NotFound/NotFound";
 // import RequireAuth from "./components/CustomerForms/RequireAuth/RequireAuth";
 import Footer from "./components/Shared/Footer/Footer";
-import NotFound from "./components/NotFound/NotFound";
+import RequireAuth from "./components/CustomerForms/RequireAuth/RequireAuth";
 
 function App() {
   return (
@@ -18,7 +19,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/checkout" element={<Checkout />} />
+        <Route
+          path="/checkout"
+          element={
+            <RequireAuth>
+              <Checkout />
+            </RequireAuth>
+          }
+        />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />

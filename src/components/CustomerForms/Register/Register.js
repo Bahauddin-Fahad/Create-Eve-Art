@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -7,33 +7,44 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
-// import Reload from "../../Shared/Reload/Reload";
+import Reload from "../../Shared/Reload/Reload";
 
 const Register = () => {
+  const nameRef = useRef("");
+  const emailRef = useRef("");
+  const passRef = useRef("");
+  const confirmPassRef = useRef("");
   const navigate = useNavigate();
   const [agree, setAgree] = useState(false);
   const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating /*updateError*/] = useUpdateProfile(auth);
+  let errorElement;
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const pass = e.target.password.value;
-    // const agree = e.target.terms.checked;
-    await createUserWithEmailAndPassword(email, pass);
-    await updateProfile({ displayName: name });
-    navigate("/home");
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const pass = passRef.current.value;
+    const confirmPass = confirmPassRef.current.value;
+
+    if (pass === confirmPass) {
+      await createUserWithEmailAndPassword(email, pass);
+      await updateProfile({ displayName: name });
+      navigate("/home");
+    } else {
+      errorElement = (
+        <p className="text-red-600 font-medium">Password didn't Match</p>
+      );
+    }
   };
 
   if (user) {
-    //  navigate("/home");
-    console.log(user);
+    navigate("/home");
   }
 
   if (loading || updating) {
-    // return <Reload />;
+    return <Reload />;
   }
 
   return (
@@ -41,13 +52,13 @@ const Register = () => {
       <h2 className="text-center m-3 font-mono font-bold">Register Form</h2>
       <Form
         onSubmit={handleRegister}
-        className="mx-auto w-96 border-2 p-4 rounded-md"
+        className="mx-auto w-full sm:w-96 md:w-96 border-2 p-4 rounded-md"
       >
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Your Name</Form.Label>
           <Form.Control
+            ref={nameRef}
             type="text"
-            name="name"
             placeholder="Enter your Name"
             required
           />
@@ -55,8 +66,8 @@ const Register = () => {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
+            ref={emailRef}
             type="email"
-            name="email"
             placeholder="Enter email"
             required
           />
@@ -65,12 +76,22 @@ const Register = () => {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
+            ref={passRef}
             type="password"
-            name="password"
-            placeholder="Password"
+            placeholder="Your Password"
             required
           />
         </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
+          <Form.Label>Confirm Password</Form.Label>
+          <Form.Control
+            ref={confirmPassRef}
+            type="password"
+            placeholder="Confirm Your Password"
+            required
+          />
+        </Form.Group>
+        {errorElement}
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
             onClick={() => setAgree(!agree)}

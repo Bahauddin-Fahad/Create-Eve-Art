@@ -9,7 +9,7 @@ import {
 } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { useNavigate } from "react-router-dom";
-// import Reload from "../../Shared/Reload/Reload";
+import Reload from "../../Shared/Reload/Reload";
 const SocialLogin = () => {
   let errorElement;
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const SocialLogin = () => {
     useSignInWithGoogle(auth);
 
   // Facebook Sign In
-  const [signInWithFacebook /*fbUser*/, , fbLoading, fbError] =
+  const [signInWithFacebook, fbUser, fbLoading, fbError] =
     useSignInWithFacebook(auth);
 
   // GitHub Sign In
@@ -27,7 +27,7 @@ const SocialLogin = () => {
     useSignInWithGithub(auth);
 
   if (googleLoading || fbLoading || gitHubLoading) {
-    // return <Reload />;
+    return <Reload />;
   }
 
   if (googleError || fbError || gitHubError) {
@@ -39,37 +39,37 @@ const SocialLogin = () => {
     );
   }
 
-  if (googleUser || gitHubUser) {
+  if (googleUser || fbUser || gitHubUser) {
     navigate("/home");
   }
   return (
     <div>
       <div className="flex items-center justify-center">
-        <div className=" bg-slate-300 h-1 w-32"></div>
-        <p className="mx-2 mb-0">or</p>
-        <div className=" bg-slate-300 h-1 w-32"></div>
+        <div className=" bg-slate-300 h-[2px] w-32"></div>
+        <p className="mx-2 mb-0">Or</p>
+        <div className=" bg-slate-300 h-[2px] w-32"></div>
       </div>
       {errorElement}
       <div>
         <button
           onClick={() => signInWithGoogle()}
-          className="flex items-center justify-between mx-auto font-medium  mt-3 border-2 border-gray-400 rounded-xl w-3/4 px-6 py-1"
+          className="flex items-center justify-center mx-auto font-medium  mt-3 border-[1px] border-gray-400 rounded-xl w-3/4 px-6 py-1"
         >
-          <img className="w-5" src={googleLogo} alt="" />
+          <img className="w-5 mr-3" src={googleLogo} alt="" />
           Continue With Google
         </button>
         <button
           onClick={() => signInWithFacebook()}
-          className="flex items-center justify-between mx-auto mt-3 bg-blue-700 rounded-xl text-white font-medium  border-0 w-3/4 px-6 py-1"
+          className="flex items-center justify-center mx-auto mt-3 bg-blue-700 rounded-xl text-white font-medium  border-0 w-3/4 px-6 py-1"
         >
-          <img className=" w-5" src={fbLogo} alt="" />
+          <img className=" w-5 mr-3" src={fbLogo} alt="" />
           Continue With Facebook
         </button>
         <button
           onClick={() => signInWithGithub()}
-          className="flex items-center justify-between mx-auto mt-3 border-0 bg-gray-800 text-white font-medium rounded-xl w-3/4 px-6 py-1"
+          className="flex items-center justify-center mx-auto mt-3 border-0 bg-gray-800 text-white font-medium rounded-xl w-3/4 px-6 py-1"
         >
-          <img className="w-5" src={gitHubLogo} alt="" />
+          <img className="w-5 mr-3" src={gitHubLogo} alt="" />
           Continue With GitHub
         </button>
       </div>

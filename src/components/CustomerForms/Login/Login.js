@@ -6,10 +6,10 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-// import Reload from "../../Shared/Reload/Reload";
+import Reload from "../../Shared/Reload/Reload";
 import SocialLogin from "../SocialLogin/SocialLogin";
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -21,16 +21,15 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  // pass reset
+  // Password Reset
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   if (user) {
-    // navigate("/home");
     navigate(from, { replace: true });
   }
 
   if (loading || sending) {
-    // return <Reload />;
+    return <Reload />;
   }
 
   if (error) {
@@ -38,11 +37,10 @@ const Login = () => {
       <p className=" text-red-600 font-medium">Error: {error?.message}</p>
     );
   }
-
   const handleLogIn = (e) => {
-    e.preventDefault();
     const email = emailRef.current.value;
     const pass = passRef.current.value;
+    e.preventDefault();
     signInWithEmailAndPassword(email, pass);
   };
 
@@ -50,9 +48,9 @@ const Login = () => {
     const email = emailRef.current.value;
     if (email) {
       await sendPasswordResetEmail(email);
-      // toast(`Email has been sent to ${email}`);
+      toast.success(`Email has been sent to ${email}`, { theme: "colored" });
     } else {
-      // toast("Enter your Email");
+      toast.error("Opps!!! Enter your Email First", { theme: "colored" });
     }
   };
 
@@ -61,7 +59,7 @@ const Login = () => {
       <h2 className="text-center m-3 font-mono font-bold">Login Form</h2>
       <Form
         onSubmit={handleLogIn}
-        className="mx-auto w-96 border-2 p-4 rounded-md"
+        className="mx-auto w-full sm:w-96 md:w-96 border-2 p-4 rounded-md"
       >
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -78,12 +76,11 @@ const Login = () => {
           <Form.Control
             ref={passRef}
             type="password"
-            placeholder="Password"
+            placeholder="Your Password"
             required
           />
         </Form.Group>
         {errorElement}
-        <Form.Group className="mb-3" controlId="formBasicCheckbox"></Form.Group>
         <Button variant="dark" type="submit">
           Log In
         </Button>
@@ -104,7 +101,7 @@ const Login = () => {
           </Link>
         </p>
         <SocialLogin />
-        {/* <ToastContainer /> */}
+        <ToastContainer />
       </Form>
     </div>
   );
