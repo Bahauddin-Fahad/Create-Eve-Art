@@ -1,10 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import {
-  useCreateUserWithEmailAndPassword,
-  useUpdateProfile,
-} from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Reload from "../../Shared/Reload/Reload";
@@ -18,24 +15,22 @@ const Register = () => {
   const [agree, setAgree] = useState(false);
   const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  const [updateProfile, updating /*updateError*/] = useUpdateProfile(auth);
-  let errorElement;
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    const name = nameRef.current.value;
+    // const name = nameRef.current.value;
     const email = emailRef.current.value;
     const pass = passRef.current.value;
     const confirmPass = confirmPassRef.current.value;
-
+    const passMatchError = document.getElementById("pass-match-error");
     if (pass === confirmPass) {
       await createUserWithEmailAndPassword(email, pass);
-      await updateProfile({ displayName: name });
       navigate("/home");
+      passMatchError.classList.add("hidden");
+      passMatchError.classList.remove("block");
     } else {
-      errorElement = (
-        <p className="text-red-600 font-medium">Password didn't Match</p>
-      );
+      passMatchError.classList.add("block");
+      passMatchError.classList.remove("hidden");
     }
   };
 
@@ -43,7 +38,7 @@ const Register = () => {
     navigate("/home");
   }
 
-  if (loading || updating) {
+  if (loading) {
     return <Reload />;
   }
 
@@ -91,7 +86,11 @@ const Register = () => {
             required
           />
         </Form.Group>
-        {errorElement}
+        {
+          <p id="pass-match-error" className="text-red-600 font-medium hidden">
+            Password didn't Match,Try again.
+          </p>
+        }
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
             onClick={() => setAgree(!agree)}

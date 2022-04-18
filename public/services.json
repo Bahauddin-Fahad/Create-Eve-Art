@@ -4,41 +4,41 @@
     "serviceImg": "../serviceImages/portrait.jpg",
     "serviceName": "Portrait Photography",
     "price": "$99",
-    "description": "A portrait is not made in the camera but on either side of it.It's one thing to make a picture of what a person looks like, it's another thing to make a portrait of who they are."
+    "description": "A portrait is not made in the camera but on either side of it.It's one thing to make a picture of what a person looks like.Get yourself some amazing portraits for your upcoming futures"
   },
   {
     "id": 2,
     "serviceImg": "../serviceImages/nature.jpg",
     "serviceName": "Nature Photoshoot",
     "price": "$109",
-    "description": "Nature is the most amazing thing the creator has given us. And Explore yourself in the beauty of the nature"
+    "description": "Nature is the most amazing thing the creator has given us.Explore yourself in the beauty of the nature with my photoshoot,and capture the beauty for the lifetime."
   },
   {
     "id": 3,
     "serviceImg": "../serviceImages/wedding.jpg",
     "serviceName": "Wedding Photoshoot",
     "price": "$220",
-    "description": "Event photography of the biggest day of a couple's life is a big responsibility. But with the right equipment, practice, and preparation, you can get great wedding photos."
+    "description": "Everyone want to make their the wedding day memorable for the lifetime.My love for wedding photography and years of experience speak that you can trust me with your wedding day."
   },
   {
     "id": 4,
     "serviceImg": "../serviceImages/food.jpg",
     "serviceName": "Food Photography",
     "price": "$99",
-    "description": "Taking great photographs of food is a hard-earned skill after all.A great photograph is never a fluke you may not know why it's special or how you made it that way, but the fact remains that certain fundamentals still came together to make it happen."
+    "description": "With the help of my knowledge,I am ready to undertake any food shoots involving cooking hot food and cold food,shooting ready meals,meat,fruits & vegetables,baked products,cakes,snacks and sweets."
   },
   {
     "id": 5,
     "serviceImg": "../serviceImages/product.jpg",
     "serviceName": "Product Photography",
     "price": "$99",
-    "description": "Product photography is any image of a good for sale. Also known as commercial photography, these images are meant to entice shoppers to purchase the photographed products.Get your favourite products spotted on and explore the world"
+    "description": "Product photography is any image of a good for sale.Get your favourite products spotted on,and grow your business to reach to your goals."
   },
   {
     "id": 6,
     "serviceImg": "../serviceImages/fashion.jpg",
     "serviceName": "Fashion Photography",
     "price": "$185",
-    "description": "Fashion is about who you want to be, not who you are, it's therefore artificial… it's funny and it's sad and it's a little crazy. But I would want those elements to be in any photograph I took."
+    "description": "My sensitivity for detail and form is appreciated by numerous fashion retailers that I have work for.You get some amazing photos for your fashion brand which will help you attract your customers even More."
   }
 ]

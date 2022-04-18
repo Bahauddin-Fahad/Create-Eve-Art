@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
-// import logo from "../../../images/logo/logo.png";
+import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -11,6 +11,7 @@ const Header = () => {
 
   const handleSignOut = () => {
     signOut(auth);
+    toast.info("You Have Been Signed Out Succesfully", { theme: "colored" });
   };
   return (
     <header className="sticky top-0 z-50 ">
@@ -47,6 +48,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <ToastContainer />
     </header>
   );
 };
