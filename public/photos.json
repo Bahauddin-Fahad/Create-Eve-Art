@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "myCaptures": "./myCaptures/myCapture1.jpg"
+  },
+  {
+    "id": 2,
+    "myCaptures": "./myCaptures/myCapture2.jpg"
+  },
+  {
+    "id": 3,
+    "myCaptures": "./myCaptures/myCapture3.jpg"
+  },
+  {
+    "id": 4,
+    "myCaptures": "./myCaptures/myCapture4.jpg"
+  },
+  {
+    "id": 5,
+    "myCaptures": "./myCaptures/myCapture5.jpg"
+  },
+  {
+    "id": 6,
+    "myCaptures": "./myCaptures/myCapture6.jpg"
+  },
+  {
+    "id": 7,
+    "myCaptures": "./myCaptures/myCapture7.jpg"
+  },
+  {
+    "id": 8,
+    "myCaptures": "./myCaptures/myCapture8.jpg"
+  },
+  {
+    "id": 9,
+    "myCaptures": "./myCaptures/myCapture9.jpg"
+  },
+  {
+    "id": 10,
+    "myCaptures": "./myCaptures/myCapture10.jpg"
+  },
+  {
+    "id": 11,
+    "myCaptures": "./myCaptures/myCapture11.jpg"
+  },
+  {
+    "id": 12,
+    "myCaptures": "./myCaptures/myCapture12.jpg"
+  }
+]

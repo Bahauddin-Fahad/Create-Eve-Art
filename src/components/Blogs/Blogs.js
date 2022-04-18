@@ -5,8 +5,8 @@ const Blogs = () => {
     <div>
       <h2 className="font-bold text-center mt-4">Question And Answer</h2>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 m-10 gap-10">
-        <div className="border-2 rounded-lg shadow-lg">
-          <h5 className="font-bold m-2 p-2 mb-3 rounded-md bg-[#212529] text-white flex items-center justify-center h-24">
+        <div className="border-2 rounded-lg shadow-[rgba(0,0,0,0.19)_0px_10px_20px,rgba(0,0,0,0.23)_0px_2px_6px]">
+          <h5 className="font-bold m-2 p-2 mb-3 rounded-md bg-[#212529] text-white h-24 flex items-center justify-center">
             Question 1 : Difference between Authentication and Authorization?
           </h5>
           <span className="text-lg flex justify-start font-bold px-3">
@@ -21,7 +21,7 @@ const Blogs = () => {
             grandparent to parent to child component and so on.
           </h6>
         </div>
-        <div className="border-2 rounded-lg shadow-lg">
+        <div className="border-2 rounded-lg shadow-[rgba(0,0,0,0.19)_0px_10px_20px,rgba(0,0,0,0.23)_0px_2px_6px]">
           <h5 className="font-bold m-2 p-2 mb-3 rounded-md bg-[#212529] text-white flex items-center justify-center h-24">
             Question 2 : Why do we use Firebase? What are the other options
             beside Firebase for Authentication?
@@ -38,7 +38,7 @@ const Blogs = () => {
             content block that has an important role in the document structure.
           </h6>
         </div>
-        <div className="border-2 rounded-lg shadow-lg">
+        <div className="border-2 rounded-lg shadow-[rgba(0,0,0,0.19)_0px_10px_20px,rgba(0,0,0,0.23)_0px_2px_6px]">
           <h5 className="font-bold m-2 p-2 mb-3 rounded-md bg-[#212529] text-white  flex items-center justify-center h-24">
             Question 3 : What are the other uses of Firebase beside
             Authentication?

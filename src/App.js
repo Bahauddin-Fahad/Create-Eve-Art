@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Shared/Header/Header";
 import Home from "./components/Home/Home/Home";
@@ -8,11 +8,15 @@ import About from "./components/About/About";
 import Login from "./components/CustomerForms/Login/Login";
 import Register from "./components/CustomerForms/Register/Register";
 import NotFound from "./components/Shared/NotFound/NotFound";
-// import RequireAuth from "./components/CustomerForms/RequireAuth/RequireAuth";
 import Footer from "./components/Shared/Footer/Footer";
 import RequireAuth from "./components/CustomerForms/RequireAuth/RequireAuth";
+import { useEffect } from "react";
 
 function App() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div>
       <Header />
@@ -20,7 +24,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route
-          path="/checkout"
+          path="/checkout/:serviceId"
           element={
             <RequireAuth>
               <Checkout />
