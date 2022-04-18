@@ -53,21 +53,21 @@ const SocialLogin = () => {
       <div>
         <button
           onClick={() => signInWithGoogle()}
-          className="flex items-center justify-center mx-auto font-medium  mt-3 border-[1px] border-gray-400 rounded-xl w-3/4 px-6 py-1"
+          className="flex items-center justify-center mx-auto font-medium  mt-3 border-[1px] border-gray-400 rounded-xl px-6 py-1 w-4/5"
         >
           <img className="w-5 mr-3" src={googleLogo} alt="" />
           Continue With Google
         </button>
         <button
           onClick={() => signInWithFacebook()}
-          className="flex items-center justify-center mx-auto mt-3 bg-blue-700 rounded-xl text-white font-medium  border-0 w-3/4 px-6 py-1"
+          className="flex items-center justify-center mx-auto mt-3 bg-blue-700 rounded-xl text-white font-medium  border-0 px-6 py-1 w-4/5"
         >
           <img className=" w-5 mr-3" src={fbLogo} alt="" />
           Continue With Facebook
         </button>
         <button
           onClick={() => signInWithGithub()}
-          className="flex items-center justify-center mx-auto mt-3 border-0 bg-gray-800 text-white font-medium rounded-xl w-3/4 px-6 py-1"
+          className="flex items-center justify-center mx-auto mt-3 border-0 bg-gray-800 text-white font-medium rounded-xl px-6 py-1 w-4/5"
         >
           <img className="w-5 mr-3" src={gitHubLogo} alt="" />
           Continue With GitHub
