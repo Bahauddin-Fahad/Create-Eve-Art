@@ -2,8 +2,8 @@ import React from "react";
 import Profile from "../../Assets/images/profile/profile.jpg";
 const About = () => {
   return (
-    <div className="min-h-[calc(100vh-264px)] w-8/12 mx-auto flex flex-col lg:flex-row items-center rounded-r-md m-5">
-      <div className="w-full lg:w-1/2 lg:mb-0 sm:mb-4 ">
+    <div className="min-h-[calc(100vh-264px)] w-8/12 mx-auto flex flex-col lg:flex-row gap-4 items-center rounded-r-md my-5">
+      <div className="w-full lg:w-1/2">
         <img className="w-9/12 mx-auto rounded-xl" src={Profile} alt="" />
       </div>
       <div className="w-full lg:w-1/2 shadow-[rgba(0,0,0,0.19)_0px_20px_20px,rgba(0,0,0,0.23)_0px_3px_6px] rounded-lg p-3">
